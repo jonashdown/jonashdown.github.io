@@ -1,59 +1,525 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
-    <title>Jonashdown.GitHub.io by jonashdown</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Jonashdown.GitHub.io</h1>
-      <h2 class="project-tagline"></h2>
-    </section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Ashdown: Software Engineering Impact Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f2f5;
+        }
 
-    <section class="main-content">
-      <h3>
-<a id="jon-ashdown" class="anchor" href="#jon-ashdown" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jon Ashdown</h3>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+            overflow: hidden;
+        }
 
-<ul>
-<li>Critical thinker</li>
-<li>Solutions provider</li>
-<li>Technical analyst</li>
-<li>Software developer</li>
-</ul>
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+                max-height: 400px;
+            }
+        }
 
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+        .timeline-item {
+            position: relative;
+            padding: 0 0 20px 30px;
+            border-left: 2px solid #00ab44;
+            margin-left: 10px;
+        }
 
-<p>We've crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #00ab44;
+            border: 2px solid #fff;
+        }
 
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
+        .github-calendar {
+            display: grid;
+            grid-template-columns: repeat(53, minmax(0, 1fr));
+            grid-template-rows: repeat(7, minmax(0, 1fr));
+            gap: 1px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+        .github-cell {
+            width: 10px;
+            height: 10px;
+            border-radius: 1px;
+        }
+    </style>
+</head>
 
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<body class="text-gray-800">
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-[#00ab44] mb-4">Jon Ashdown: Software Engineer / Tech Lead</h1>
+            <p class="text-xl md:text-2xl text-gray-600">Quantifying 15+ Years of Driving Innovation & Value</p>
+        </header>
 
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+                <p class="text-6xl md:text-8xl font-bold text-[#00ab44] mb-2">15+</p>
+                <h2 class="text-3xl font-semibold text-gray-700">Years of Experience</h2>
+                <p class="text-lg text-gray-500 mt-2">Across broadcast, retail, and energy sectors.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+                <p class="text-6xl md:text-8xl font-bold text-gray-700 mb-2">🚀</p>
+                <h2 class="text-3xl font-semibold text-gray-700">Leadership & Mentorship</h2>
+                <p class="text-lg text-gray-500 mt-2">Directing agile teams, mentoring junior developers.</p>
+            </div>
+        </section>
 
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Key Strengths & Expertise Snapshot</h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">
+                A balanced proficiency in both technical and leadership domains underpins a track record of successful
+                project delivery and team empowerment. This section highlights the core areas of expertise, with
+                particular emphasis on cloud infrastructure through **AWS**.
+            </p>
+            <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            <p class="text-md text-gray-500 mt-4 text-center">
+                The chart above visualizes the breadth of skills, showcasing a strong foundation in diverse technologies
+                and agile methodologies, complemented by robust leadership capabilities and significant cloud expertise.
+            </p>
+        </section>
 
-      <footer class="site-footer">
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Impactful Achievements & Quantified Value</h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">
+                Directly contributing to significant operational efficiencies, revenue growth, and strategic market
+                positioning. These accomplishments reflect a hands-on approach to problem-solving and a commitment to
+                delivering measurable results.
+            </p>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+            <div class="flex flex-wrap justify-center -mx-3 -my-3">
+                <div class="w-full px-3 py-3 md:w-1/2 lg:w-1/3">
+                    <div class="p-4 bg-green-50 rounded-lg text-center shadow h-full">
+                        <h3 class="text-4xl font-bold text-[#00ab44] mb-2">$1000s Saved</h3>
+                        <p class="text-lg text-gray-700">Reduced hourly service cost from $1.80 to $0.09 by
+                            restructuring an over-provisioned service at the BBC.</p>
+                    </div>
+                </div>
+                <div class="w-full px-3 py-3 md:w-1/2 lg:w-1/3">
+                    <div class="p-4 bg-yellow-50 rounded-lg text-center shadow h-full">
+                        <h3 class="text-4xl font-bold text-yellow-700 mb-2">Increased Sales</h3>
+                        <p class="text-lg text-gray-700">Developed a targeted advert system for a major supermarket,
+                            resulting in increased sales and brand visibility.</p>
+                    </div>
+                </div>
+                <div class="w-full px-3 py-3 md:w-1/2 lg:w-1/3">
+                    <div class="p-4 bg-purple-50 rounded-lg text-center shadow h-full">
+                        <h3 class="text-4xl font-bold text-purple-700 mb-2">100x SEO Growth</h3>
+                        <p class="text-lg text-gray-700">Improved broadcasting company's SEO, increasing indexed items
+                            from 1,000s to 100,000s.</p>
+                    </div>
+                </div>
+                <div class="w-full px-3 py-3 md:w-1/2 lg:w-1/3">
+                    <div class="p-4 bg-red-50 rounded-lg text-center shadow h-full">
+                        <h3 class="text-4xl font-bold text-red-700 mb-2">Competitive Edge</h3>
+                        <p class="text-lg text-gray-700">Led a team that built a microservice architecture for an online
+                            car retailer, providing a key competitive advantage.</p>
+                    </div>
+                </div>
+                <div class="w-full px-3 py-3 md:w-1/2 lg:w-1/3">
+                    <div class="p-4 bg-blue-50 rounded-lg text-center shadow h-full">
+                        <h3 class="text-4xl font-bold text-blue-700 mb-2">Energy Data Monetization</h3>
+                        <p class="text-lg text-gray-700">Developed systems to process, monetize and display energy data
+                            at GivEnergy.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-md text-gray-500 mt-6 text-center">
+                These figures underscore a consistent ability to generate tangible value, whether through optimizing
+                infrastructure, driving revenue, enhancing digital presence, or enabling new business models.
+            </p>
+        </section>
 
-    </section>
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Career Evolution: A Journey of Growth & Impact
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">
+                Tracing a dynamic career path from Software Engineer to Senior Software Engineer/Tech Lead, marked by
+                increasing responsibility and impactful contributions across diverse organizational contexts. This
+                timeline illustrates continuous professional development and adaptation to evolving industry demands.
+            </p>
 
-  
-  </body>
+            <div class="space-y-6">
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">GivEnergy Ltd (Jan 2024 - Mar 2025)</h3>
+                    <p class="text-gray-600">Senior Software Engineer</p>
+                    <p class="text-md text-gray-500">Developed systems for energy data, mentored team, created
+                        mono-repo.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">Infinity Works (Accenture UK) (Aug 2021 - Jan 2024)
+                    </h3>
+                    <p class="text-gray-600">Senior Consultant</p>
+                    <p class="text-md text-gray-500">Delivered backend, web, SEO projects; coached clients; led
+                        microservice architecture.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">Wakelet (Mar 2020 - Jun 2021)</h3>
+                    <p class="text-gray-600">Software Engineering Manager</p>
+                    <p class="text-md text-gray-500">Defined agile/devops processes, implemented remote working,
+                        increased user engagement.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">The BBC (Aug 2014 - Mar 2020)</h3>
+                    <p class="text-gray-600">Senior Software Engineer</p>
+                    <p class="text-md text-gray-500">Modernized search pages, optimized services, recruited/mentored,
+                        championed Node.js.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">Carphone Warehouse (Oct 2013 - Aug 2014)</h3>
+                    <p class="text-gray-600">Software Engineer</p>
+                    <p class="text-md text-gray-500">Developed features for geeksquad.co.uk.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">KD Web (Feb 2011 - Oct 2013)</h3>
+                    <p class="text-gray-600">Web Developer</p>
+                    <p class="text-md text-gray-500">Bespoke CakePHP, Wordpress and Drupal solutions.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="text-xl font-semibold text-gray-700">Merant PLC (Jul 2000 - Oct 2003)</h3>
+                    <p class="text-gray-600">Software Engineer</p>
+                    <p class="text-md text-gray-500">Early career software development.</p>
+                </div>
+            </div>
+            <p class="text-md text-gray-500 mt-6 text-center">
+                This chronological overview demonstrates a consistent upwards trajectory and a continuous drive for
+                professional growth and impact.
+            </p>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Technical & Methodological Toolkit</h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">
+                A versatile command of modern development tools and methodologies, enabling effective contributions
+                across various layers of the software stack and project lifecycle. This encompasses robust backend
+                technologies, dynamic frontend frameworks, and cloud-native practices.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Core Programming & Frameworks</h3>
+                    <div class="chart-container h-80 max-h-96">
+                        <canvas id="techChart"></canvas>
+                    </div>
+                    <p class="text-md text-gray-500 mt-4 text-center">
+                        Dominant expertise in JavaScript/TypeScript ecosystems, complemented by strong PHP capabilities.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Development Practices & Ops</h3>
+                    <div class="chart-container h-80 max-h-96">
+                        <canvas id="devOpsChart"></canvas>
+                    </div>
+                    <p class="text-md text-gray-500 mt-4 text-center">
+                        Proficiency in modern development, testing, and deployment paradigms.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Strategic & Communication Skills</h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">
+                Beyond technical execution, strong proficiencies in strategic thinking, architectural design
+                communication, and stakeholder engagement are crucial for project success.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-green-50 rounded-lg text-center shadow">
+                    <p class="text-4xl font-bold text-[#00ab44] mb-2">90%</p>
+                    <p class="text-lg text-gray-700">Architectural Diagrams</p>
+                </div>
+                <div class="p-4 bg-yellow-50 rounded-lg text-center shadow">
+                    <p class="text-4xl font-bold text-yellow-700 mb-2">90%</p>
+                    <p class="text-lg text-gray-700">Presentation</p>
+                </div>
+                <div class="p-4 bg-purple-50 rounded-lg text-center shadow">
+                    <p class="text-4xl font-bold text-purple-700 mb-2">91%</p>
+                    <p class="text-lg text-gray-700">Stakeholder Management</p>
+                </div>
+            </div>
+            <p class="text-md text-gray-500 mt-6 text-center">
+                These scores reflect a high capability in visualizing complex systems, articulating ideas clearly, and
+                effectively managing relationships with key stakeholders.
+            </p>
+        </section>
+
+        <section class="bg-white rounded-lg shadow-md p-6 mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 text-center">Beyond Code: Leadership & Community Engagement
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 text-center">
+                A holistic approach to professional development extends beyond technical coding to encompass significant
+                contributions in team leadership, knowledge sharing, and community involvement.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="flex flex-col items-center">
+                    <p class="text-6xl text-orange-600 mb-4">🤝</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Team Collaboration & Mentorship</h3>
+                    <p class="text-lg text-gray-600 text-center">
+                        A strong proponent of collaborative environments, creating mono-repos and organizing developer
+                        learning sessions to foster knowledge sharing and improve team cohesion.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-6xl text-pink-600 mb-4">🏕️</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Community & Volunteering</h3>
+                    <p class="text-lg text-gray-600 text-center">
+                        Active leadership in local Scout groups (Beavers and Cubs) and volunteering as a climbing
+                        instructor, demonstrating commitment to community and skill development outside of work.</p>
+                </div>
+            </div>
+            <div class="bg-gray-100 rounded-lg shadow-md p-6 mt-12 text-center">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">GitHub Activity Snapshot (Jan 2024 - Jan 2025)</h3>
+                <p class="text-lg text-gray-600 mb-4">
+                    A visual representation of consistent development engagement over the past year.
+                    For full details of contributions and activity, please visit my GitHub profile.
+                </p>
+                <div id="githubContributions" class="github-calendar mx-auto bg-gray-200 p-1 rounded-sm"></div>
+                <a href="https://github.com/jonashdown?tab=overview&from=2024-01-11&to=2025-01-11" target="_blank"
+                    class="inline-block bg-[#00ab44] text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300 mt-6">View
+                    GitHub Profile ≫</a>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 mb-8">
+            <p class="text-lg text-gray-600 mb-4">
+                This infographic provides a snapshot of my professional journey and impact. For a detailed discussion on
+                how my skills and experience can drive success for your organization, please connect:
+            </p>
+            <div class="flex justify-center space-x-6 text-xl">
+                <a href="https://www.linkedin.com/in/jonashdown" target="_blank"
+                    class="text-[#00ab44] hover:text-green-700 transition duration-300 flex items-center">
+                    <span style="font-size: 1.5em; line-height: 1; margin-right: 0.25em;">💼</span> LinkedIn
+                </a>
+                <a href="https://github.com/jonashdown" target="_blank"
+                    class="text-[#00ab44] hover:text-green-700 transition duration-300 flex items-center">
+                    <span style="font-size: 1.5em; line-height: 1; margin-right: 0.25em;">🐙</span> GitHub
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const wrapLabel = (label) => {
+            if (typeof label !== 'string' || label.length <= 16) {
+                return label;
+            }
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length <= 16) {
+                    currentLine += (currentLine === '' ? '' : ' ') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            if (currentLine !== '') {
+                lines.push(currentLine);
+            }
+            return lines;
+        };
+
+        const chartTooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function (tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // Skills Chart Data - AWS emphasized, others increased
+        const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(skillsCtx, {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapLabel('Node.js'), wrapLabel('Typescript'), wrapLabel('React'), wrapLabel('AWS Cloud'),
+                    wrapLabel('Agile Methodologies'), wrapLabel('Team Leadership'), wrapLabel('Mentoring')
+                ],
+                datasets: [{
+                    label: 'Proficiency',
+                    data: [98, 90, 88, 98, 95, 90, 93],
+                    backgroundColor: 'rgba(0, 171, 68, 0.4)',
+                    borderColor: '#00ab44',
+                    pointBackgroundColor: '#00ab44',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00ab44'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        pointLabels: {
+                            color: '#4A5568',
+                            font: {
+                                size: 12
+                            }
+                        },
+                        ticks: {
+                            display: false,
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                },
+                ...chartTooltipConfig
+            }
+        });
+
+        // Technical Chart Data (no change requested here, keeping as is)
+        const techCtx = document.getElementById('techChart').getContext('2d');
+        const techChart = new Chart(techCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('Node.js'), wrapLabel('Typescript'), wrapLabel('PHP'), wrapLabel('React'),
+                    wrapLabel('Express.js'), wrapLabel('PostgreSQL'), wrapLabel('MySQL'), wrapLabel('MongoDB'),
+                    wrapLabel('ElasticSearch'), wrapLabel('Solr')
+                ],
+                datasets: [{
+                    label: 'Technical Expertise',
+                    data: [95, 90, 70, 75, 80, 85, 80, 60, 70, 65],
+                    backgroundColor: [
+                        '#00ab44', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+                        '#FF9F40', '#E7E9ED', '#A0C0E7', '#F0A0B0', '#B0E0A0'
+                    ],
+                    borderColor: [
+                        '#00ab44', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF',
+                        '#FF9F40', '#E7E9ED', '#A0C0E7', '#F0A0B0', '#B0E0A0'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: '#4A5568'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#4A5568'
+                        }
+                    }
+                },
+                ...chartTooltipConfig
+            }
+        });
+
+        // DevOps Chart Data - TDD, BDD, CI/CD updated
+        const devOpsCtx = document.getElementById('devOpsChart').getContext('2d');
+        const devOpsChart = new Chart(devOpsCtx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('TDD'), wrapLabel('BDD'), wrapLabel('CI/CD'), wrapLabel('DevOps'),
+                    wrapLabel('Systems Architecture'), wrapLabel('Git/Github'), wrapLabel('Docker'),
+                    wrapLabel('AWS')
+                ],
+                datasets: [{
+                    label: 'DevOps & Practices',
+                    data: [98, 96, 94, 80, 85, 95, 75, 95],
+                    backgroundColor: [
+                        '#00ab44', '#FFCE56', '#4BC0C0', '#FF6384',
+                        '#9966FF', '#FF9F40', '#E7E9ED', '#A0C0E7'
+                    ],
+                    borderColor: [
+                        '#00ab44', '#FFCE56', '#4BC0C0', '#FF6384',
+                        '#9966FF', '#FF9F40', '#E7E9ED', '#A0C0E7'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: '#4A5568'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#4A5568'
+                        }
+                    }
+                },
+                ...chartTooltipConfig
+            }
+        });
+
+        // GitHub Contributions Visualization - with shades of green
+        const githubContributionsContainer = document.getElementById('githubContributions');
+        const totalCells = 7 * 53;
+        const greenShades = ['#c6e48b', '#7bc96d', '#239a3b', '#196127'];
+        const activeProbability = 0.6;
+
+        for (let i = 0; i < totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('github-cell');
+            if (Math.random() < activeProbability) {
+                const shade = greenShades[Math.floor(Math.random() * greenShades.length)];
+                cell.classList.add(`bg-[${shade}]`);
+            } else {
+                cell.classList.add('bg-gray-300');
+            }
+            githubContributionsContainer.appendChild(cell);
+        }
+    </script>
+</body>
+
 </html>
-
